@@ -73,7 +73,7 @@ const loginUser = asyncHandler(async (req, res) => {
 
 			const options = {
 				httpOnly: true,
-				maxAge: 24 * 60 * 60 * 1000,
+				// maxAge: 24 * 60 * 60 * 1000,
 				secure: true,
 				sameSite: "None",
 			};
