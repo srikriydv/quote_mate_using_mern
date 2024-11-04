@@ -6,8 +6,8 @@ function Copyright() {
 	return (
 		<Typography variant="body2" align="center" sx={{ color: "#ffffff" }}>
 			{"Copyright ©"}
-			<Link color="inherit" href=" ">
-				Quotation master
+			<Link color="inherit" href="htts://github.com/API-Imperfect">
+				MERN Invoice
 			</Link>{" "}
 			{new Date().getFullYear()} {"."}
 		</Typography>
@@ -21,7 +21,6 @@ const Footer = () => {
 				bgcolor: "#000000",
 				marginTop: "auto",
 			}}
-			className="footer"
 		>
 			<CssBaseline />
 

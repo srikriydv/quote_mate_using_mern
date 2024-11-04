@@ -1,4 +1,4 @@
-import { Box, Button, Grid2, Link, styled, Typography } from "@mui/material";
+import { Box, Button, Grid, Link, styled, Typography } from "@mui/material";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 import "../styles/homepage.css";
 
@@ -25,8 +25,8 @@ const HomePage = () => {
 	return (
 		<>
 			<header className="masthead main-bg-image">
-				<Grid2>
-					<Grid2 item md={12} lg={12} sm={6}>
+				<Grid>
+					<Grid item md={12} lg={12} sm={6}>
 						<Box sx={{ display: "flex", flexDirection: "column" }}>
 							<StyledTypography
 								variant="h1"
@@ -76,8 +76,8 @@ const HomePage = () => {
 								</Link>
 							</CreateAccountButton>
 						</Box>
-					</Grid2>
-				</Grid2>
+					</Grid>
+				</Grid>
 			</header>
 		</>
 	);
