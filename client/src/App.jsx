@@ -1,4 +1,3 @@
-
 import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { Route, Routes } from "react-router-dom";
@@ -18,6 +17,10 @@ import LoginPage from "./features/auth/pages/LoginPage";
 import ResendEmailTokenPage from "./features/auth/pages/ResendEmailTokenPage";
 import PasswordResetRequestPage from "./features/auth/pages/PasswordResetRequestPage";
 import PasswordResetPage from "./features/auth/pages/PasswordResetPage";
+import { ROLES } from "./config/roles";
+import UsersList from "./features/users/pages/UserListPage";
+import DashboardPage from "./pages/DashboardPage";
+import AuthRequired from "./components/AuthRequired";
 
 const App = () => {
 	useTitle("MERN Invoice - Home");
@@ -41,6 +44,19 @@ const App = () => {
 						path="auth/reset_password"
 						element={<PasswordResetPage />}
 					/>
+					{/* Private Routes - Users */}
+					<Route
+						element={<AuthRequired allowedRoles={[ROLES.User]} />}
+					>
+						<Route path="dashboard" element={<DashboardPage />} />
+					</Route>
+
+					{/* Private Routes - Admin Users only */}
+					<Route
+						element={<AuthRequired allowedRoles={[ROLES.Admin]} />}
+					>
+						<Route path="users" element={<UsersList />} />
+					</Route>
 
 					<Route path="*" element={<NotFound />} />
 				</Route>
