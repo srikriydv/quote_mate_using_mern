@@ -22,6 +22,7 @@ app.use(cors({
 
 console.log(process.env.SENDER_EMAIL)
 console.log(process.env.DOMAIN)
+console.log(process.env.DOMAIN2)
 if (process.env.NODE_ENV === "development") {
 	app.use(morgan("dev"));
 }

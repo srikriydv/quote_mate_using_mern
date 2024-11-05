@@ -2,13 +2,13 @@ import asyncHandler from "express-async-handler";
 import User from "../../models/userModel.js";
 import VerificationToken from "../../models/verifyResetTokenModel.js";
 import sendEmail from "../../utils/sendEmail.js";
-const domainURL = process.env.DOMAIN;
+const domainURL = process.env.DOMAIN2;
 const { randomBytes } = await import("crypto");
 
 // $-title   Send password reset email link
 // $-path    POST /api/v1/auth/reset_password_request
 // $-auth    Public
-
+console.log(process.env.DOMAIN2);
 const resetPasswordRequest = asyncHandler(async (req, res) => {
 	const { email } = req.body;
 
