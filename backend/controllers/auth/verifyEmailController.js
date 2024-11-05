@@ -52,7 +52,7 @@ const verifyUserEmail = asyncHandler(async (req, res) => {
 			"./emails/template/welcome.handlebars"
 		);
 
-		res.redirect("/auth/verify");
+		res.redirect("http://localhost:5173/auth/verify");
 	}
 });
 

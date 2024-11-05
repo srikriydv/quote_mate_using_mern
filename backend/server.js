@@ -10,11 +10,18 @@ import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
 import authRoutes from "./routes/authRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import { apiLimiter } from "./middleware/apiLimiter.js";
+import cors from "cors";
 
 await connectionToDB();
 
 const app = express();
+app.use(cors({
+	origin: "http://localhost:5173", // Allows requests from your frontend
+	credentials: true, // Allows cookies if needed
+}));
 
+console.log(process.env.SENDER_EMAIL)
+console.log(process.env.DOMAIN)
 if (process.env.NODE_ENV === "development") {
 	app.use(morgan("dev"));
 }
